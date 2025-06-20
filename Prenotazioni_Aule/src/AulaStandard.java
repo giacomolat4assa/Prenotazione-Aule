@@ -1,5 +1,5 @@
 import java.util.Objects;
-
+ 
 public class AulaStandard extends Aula{
 	private int numeroLavagne;
 	
