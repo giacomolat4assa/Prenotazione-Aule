@@ -1,4 +1,3 @@
-import java.util.Objects;
 
 public class AulaAttrezzata extends Aula{
 	private int numeroPostazioniPc;
@@ -22,6 +21,8 @@ public class AulaAttrezzata extends Aula{
 	}
 	@Override
 	public int hashCode() {
-		return Objects.hash(super.hashCode(), numeroPostazioniPc);
+		int result = super.hashCode();
+		result = 31 * result + numeroPostazioniPc;
+		return result;
 	}
 }

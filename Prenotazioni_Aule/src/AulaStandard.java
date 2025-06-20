@@ -1,5 +1,3 @@
-import java.util.Objects;
- 
 public class AulaStandard extends Aula{
 	private int numeroLavagne;
 	
@@ -22,6 +20,8 @@ public class AulaStandard extends Aula{
 	}
 	@Override 
 	public int hashCode() {
-		return Objects.hash(super.hashCode(), numeroLavagne);
+		int result = super.hashCode();
+		result = 31 * result + numeroLavagne;
+		return result;
 	}
 }
