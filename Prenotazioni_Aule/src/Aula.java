@@ -1,12 +1,16 @@
-import java.util.Objects;
-
 public abstract class Aula {
 	private String nome;
 	private int capienzaMax;
 	
 	Aula(String nome, int capienzaMax){
-		this.nome = nome;
-		this.capienzaMax = capienzaMax;
+		if(nome!=null)
+			this.nome = nome;
+		else
+			throw new AulaException("aula senza nome!");
+		if(capienzaMax>0)
+			this.capienzaMax = capienzaMax;
+		else 
+			throw new AulaException("aula vuota!");
 	}
 	
 	public String getNome() {
@@ -23,10 +27,13 @@ public abstract class Aula {
 		if(obj == null || this.getClass() != obj.getClass())
 			return false;
 		Aula other = (Aula) obj;
-		return Objects.equals(nome,other.nome) && (this.capienzaMax==other.capienzaMax);
+		return nome.equals(other.nome) && (this.capienzaMax==other.capienzaMax);
 	}
 	@Override 
 	public int hashCode() {
-		return Objects.hash(nome,capienzaMax);
+		int result = 17;
+		result = 31 * result + (nome != null ? nome.hashCode() : 0);
+		result = 31 * result + capienzaMax;
+		return result;
 	}
 }
