@@ -26,7 +26,6 @@ public abstract class Aula {
 		return Objects.equals(nome,other.nome) && (this.capienzaMax==other.capienzaMax);
 	}
 	@Override 
-	//ciao
 	public int hashCode() {
 		return Objects.hash(nome,capienzaMax);
 	}
