@@ -1,4 +1,3 @@
-import java.util.Objects;
 public class Prenotazione {
 	private String data;
 	private Aula aula;
@@ -20,10 +19,13 @@ public class Prenotazione {
 		if(obj == null || this.getClass()!=obj.getClass())
 			return false;
 		Prenotazione other = (Prenotazione) obj;
-		return Objects.equals(data, other.data) && Objects.equals(aula, other.aula);
+		return data.equals(other.data) && aula.equals(other.aula);
 	}
 	@Override
 	public int hashCode() {
-		return Objects.hash(data, aula);
+		int result = 17;
+		result = 31 * result + data.hashCode();
+		result = 31 * result + aula.hashCode();
+		return result;
 	}
 }
