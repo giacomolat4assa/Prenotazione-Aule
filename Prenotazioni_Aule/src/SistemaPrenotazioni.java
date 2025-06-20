@@ -24,7 +24,7 @@ public class SistemaPrenotazioni {
 			enlarge();
 		for (int i = 0; i < size; i++) {
 			if(prenotazioni[i].equals(other))
-				throw new AulaOccupataException("aula gia esistente!");
+				throw new AulaException("aula gia esistente!");
 		}
 		prenotazioni[size++]=other;
 	}

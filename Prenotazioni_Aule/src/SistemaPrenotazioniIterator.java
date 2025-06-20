@@ -25,7 +25,7 @@ public class SistemaPrenotazioniIterator implements Iterable<Prenotazione>{
 			enlarge();
 		for (int i = 0; i < index; i++) {
 			if(prenotazioni[i].equals(other))
-				throw new AulaOccupataException("aula gia esistente!");
+				throw new AulaException("aula gia esistente!");
 		}
 		prenotazioni[index++] = other;
 	}
